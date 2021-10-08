@@ -35,14 +35,14 @@ static void move(uint64_t num, uint8_t byte_size, int base_shift, Byte* out)
     Byte _out[byte_size];
     for (uint64_t i = 0; i < byte_size; i++) 
     {
-        uint64_t l_shift = base_shift - i * 7;
+        uint64_t r_shift = base_shift - i * 7;
         if (i == 0)
         {
-            uint64_t b = (num >> l_shift) & EIGHT_BIT_MASK;
+            uint64_t b = (num >> r_shift) & EIGHT_BIT_MASK;
             _out[i] = (Byte) b;
         } else
         {
-            uint64_t b = ((num >> l_shift) & EIGHT_BIT_MASK) | CONTINUATION_BIT_MASK;
+            uint64_t b = ((num >> r_shift) & EIGHT_BIT_MASK) | CONTINUATION_BIT_MASK;
             _out[i] = (Byte) b;
         }
     }
@@ -167,8 +167,8 @@ int decode_varint(Byte* buf, uint64_t* out, uint8_t byte_size)
     uint64_t _out = 0;
     for (uint32_t i = 0; i < byte_size; i++)
     {
-        uint8_t r_shift = (7 * (byte_size - 1)) - i * 7;
-        uint64_t b = (reversed_buf[i] & SEVEN_BIT_MASK) << r_shift;
+        uint8_t l_shift = (7 * (byte_size - 1)) - i * 7;
+        uint64_t b = (reversed_buf[i] & SEVEN_BIT_MASK) << l_shift;
         _out += b;
     }
 
