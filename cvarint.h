@@ -56,7 +56,7 @@ int encode_varint(uint64_t num, Byte** out, uint8_t* byte_size)
     if (num < MAX_ONE_BYTES)
     {
         uint8_t bs = 1;
-        Byte* _out = (Byte*) malloc(sizeof(Byte) * bs);
+        Byte* _out = (Byte*) malloc(sizeof(*_out) * bs);
         _out[0] = num;
         
         *out = _out;
@@ -67,7 +67,7 @@ int encode_varint(uint64_t num, Byte** out, uint8_t* byte_size)
     if (num < MAX_TWO_BYTES)
     {
         uint8_t bs = 2;
-        Byte* _out = (Byte*) malloc(sizeof(Byte) * bs);
+        Byte* _out = (Byte*) malloc(sizeof(*_out) * bs);
         move(num, bs, 7, _out);
 
         *out = _out;
@@ -78,7 +78,7 @@ int encode_varint(uint64_t num, Byte** out, uint8_t* byte_size)
     if (num < MAX_THREE_BYTES)
     {
         uint8_t bs = 3;
-        Byte* _out = (Byte*) malloc(sizeof(Byte) * bs);
+        Byte* _out = (Byte*) malloc(sizeof(*_out) * bs);
         move(num, bs, 14, _out);
 
         *out = _out;
@@ -89,7 +89,7 @@ int encode_varint(uint64_t num, Byte** out, uint8_t* byte_size)
     if (num < MAX_FOUR_BYTES)
     {
         uint8_t bs = 4;
-        Byte* _out = (Byte*) malloc(sizeof(Byte) * bs);
+        Byte* _out = (Byte*) malloc(sizeof(*_out) * bs);
         move(num, bs, 21, _out);
 
         *out = _out;
@@ -100,7 +100,7 @@ int encode_varint(uint64_t num, Byte** out, uint8_t* byte_size)
     if (num < MAX_FIVE_BYTES)
     {
         uint8_t bs = 5;
-        Byte* _out = (Byte*) malloc(sizeof(Byte) * bs);
+        Byte* _out = (Byte*) malloc(sizeof(*_out) * bs);
         move(num, bs, 28, _out);
 
         *out = _out;
@@ -111,7 +111,7 @@ int encode_varint(uint64_t num, Byte** out, uint8_t* byte_size)
     if (num < MAX_SIX_BYTES)
     {
         uint8_t bs = 6;
-        Byte* _out = (Byte*) malloc(sizeof(Byte) * bs);
+        Byte* _out = (Byte*) malloc(sizeof(*_out) * bs);
         move(num, bs, 35, _out);
 
         *out = _out;
@@ -122,7 +122,7 @@ int encode_varint(uint64_t num, Byte** out, uint8_t* byte_size)
     if (num < MAX_SEVEN_BYTES)
     {
         uint8_t bs = 7;
-        Byte* _out = (Byte*) malloc(sizeof(Byte) * bs);
+        Byte* _out = (Byte*) malloc(sizeof(*_out) * bs);
         move(num, bs, 42, _out);
 
         *out = _out;
@@ -133,7 +133,7 @@ int encode_varint(uint64_t num, Byte** out, uint8_t* byte_size)
     if (num < MAX_EIGHT_BYTES)
     {
         uint8_t bs = 8;
-        Byte* _out = (Byte*) malloc(sizeof(Byte) * bs);
+        Byte* _out = (Byte*) malloc(sizeof(*_out) * bs);
         move(num, bs, 49, _out);
 
         *out = _out;
@@ -144,7 +144,7 @@ int encode_varint(uint64_t num, Byte** out, uint8_t* byte_size)
     if (num < MAX_NINE_BYTES)
     {
         uint8_t bs = 9;
-        Byte* _out = (Byte*) malloc(sizeof(Byte) * bs);
+        Byte* _out = (Byte*) malloc(sizeof(*_out) * bs);
         move(num, bs, 56, _out);
 
         *out = _out;
