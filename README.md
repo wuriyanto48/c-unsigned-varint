@@ -25,6 +25,7 @@ if (e != 0)
 
 printf("byte size: %d\n", byte_size);
 
+// just print or send out to the wire/network, write to file, or just print
 for (uint32_t i = 0; i < byte_size; i++)
     printf("%d\n", out[i]); // 172, 2
 ```
