@@ -1,6 +1,6 @@
 ## C Unsigned Varint
 
-Variable Integer (VarInt) Encoding implementation in `C`
+Variable Integer (Base 128 VarInt) Encoding implementation in `C`
 
 Based on `Protocol Buffer Varint Encoding` implementation (https://developers.google.com/protocol-buffers/docs/encoding#varints), but:
 - Without `Signed Encoding`
