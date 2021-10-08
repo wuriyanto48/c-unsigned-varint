@@ -2,7 +2,7 @@
 
 Variable Integer (VarInt) Encoding implementation in `C`
 
-Based on `Protocol Buffer Varint Encoding` implementation, but:
+Based on `Protocol Buffer Varint Encoding` implementation (https://developers.google.com/protocol-buffers/docs/encoding#varints), but:
 - Without `Signed Encoding`
 - Limit only `9 bytes length`
 
