@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 
     printf("decoded varint: %llu\n", decoded_varint);
 
-    // make sure to free resources
+    // make sure to free the resources
     free(out);
 
     return 0;
