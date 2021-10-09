@@ -27,8 +27,9 @@ int main(int argc, char** argv)
 
     printf("-------------\n");
     Byte data[2] = {172, 2};
+    printf("byte size: %lu\n", sizeof(data));
     uint64_t decoded_varint = 0;
-    int d = decode_varint(data, &decoded_varint, byte_size);
+    int d = decode_varint(data, &decoded_varint, sizeof(data));
     if (d != 0)
     {
         free(out);
