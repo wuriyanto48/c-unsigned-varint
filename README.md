@@ -35,7 +35,7 @@ Decoding
 ```c
 Byte stream[2] = {172, 2};
 uint64_t decoded_varint = 0;
-int d = decode_varint(stream, &decoded_varint, byte_size);
+int d = decode_varint(stream, &decoded_varint, sizeof(stream));
 if (d != 0)
 {
     free(out);
